@@ -22,7 +22,7 @@ https://hub.docker.com/r/grizzlikovoleg/custom-nginx
 ![Консоль скрин](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-03-docker/task5console2.jpg)
 ![Консоль скрин](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-03-docker/task5console3.jpg)
 ![Консоль скрин](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-03-docker/task5console4.jpg)
-*![Консоль скрин](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-03-docker/task4console5.jpg)
+Суть предупреждения в том что существуют контейнеры сервисы к которым не существуют и следует их удалить что можно сделать ключом --remove-orphans при запуске.
 
 ![Port1](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-03-docker/task5portscreen.jpg)
 ![port2](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-03-docker/Portainer.jpg)
