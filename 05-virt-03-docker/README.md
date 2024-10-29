@@ -4,7 +4,8 @@ https://hub.docker.com/r/grizzlikovoleg/custom-nginx
 
 # Задача 2
 
-[Консольскрин](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-03-docker/task2console.jpg)
+[Консоль скрин](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-03-docker/task2console.jpg)
+[Image Alt](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-03-docker/task2console.jpg)
 
 # Задача 3
 
