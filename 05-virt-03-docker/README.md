@@ -10,23 +10,19 @@ https://hub.docker.com/r/grizzlikovoleg/custom-nginx
 
 Изменения порта в контейнере на 81, хотя мы обращяемся на 80, отсюда и проблема.
 
-https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-03-docker/task3console.jpg
+![Консоль скрин](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-03-docker/task3console.jpg)
 
-Задача 4
+# Задача 4
 
-Какие я вижу проблемы Гетерогенной среды виртуализации:
-1.Сложность управления
-2.Несовместимость форматов
-3.Увеличенный риск безопасности?
-4.Конкуренция за ресурсы
-5.Лицензии и поддержка для каждой системы
-6.Сложность обеспечения совместимости
+![Консоль скрин](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-03-docker/task4console.jpg)
 
-Способы их решения
-1.Одна платформа и стандартизация
-2.Организация безопасности доступа к платформам.
-3.Мониторинг и оптимизация ресурсов
-4.Обеспечение своевременной поддержки и обслуживания
-5.Обучение инженеров
+# Задача 5
 
-Если есть варианты я бы постарался не использовать Гетерогенную инфраструктуру. Исключая случаи когда это невозможно, (например поддержка устаревшей системы, случаи когда другая система не подходит или нет возможности ее обновить/заменить, и тд).
+![Консоль скрин](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-03-docker/task5console1.jpg)
+![Консоль скрин](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-03-docker/task4console2.jpg)
+![Консоль скрин](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-03-docker/task4console3.jpg)
+![Консоль скрин](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-03-docker/task4console4.jpg)
+*![Консоль скрин](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-03-docker/task4console5.jpg)
+
+![Port1](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-03-docker/task5portscreen.jpg)
+![port2](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-03-docker/Portainer.jpg)
