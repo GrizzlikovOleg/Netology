@@ -19,9 +19,9 @@ https://hub.docker.com/r/grizzlikovoleg/custom-nginx
 # Задача 5
 
 ![Консоль скрин](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-03-docker/task5console1.jpg)
-![Консоль скрин](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-03-docker/task4console2.jpg)
-![Консоль скрин](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-03-docker/task4console3.jpg)
-![Консоль скрин](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-03-docker/task4console4.jpg)
+![Консоль скрин](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-03-docker/task5console2.jpg)
+![Консоль скрин](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-03-docker/task5console3.jpg)
+![Консоль скрин](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-03-docker/task5console4.jpg)
 *![Консоль скрин](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-03-docker/task4console5.jpg)
 
 ![Port1](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-03-docker/task5portscreen.jpg)
