@@ -4,7 +4,8 @@
 
 # Задача 1
 
-
+![YC Registry](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-04-docker-in-practice/task1ycreg_1.jpg)
+![YC Registry](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-04-docker-in-practice/task1ycreg_2.jpg)
 
 # Задача 2
 
