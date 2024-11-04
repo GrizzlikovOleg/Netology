@@ -1,3 +1,7 @@
+# Задача 0
+
+![Docker Ver](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-04-docker-in-practice/task0dockerver.jpg)
+
 # Задача 1
 
 
