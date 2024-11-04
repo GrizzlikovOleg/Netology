@@ -117,3 +117,4 @@
 
 # Задача 3
 
+![MySql query](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-04-docker-in-practice/task3database.jpg)
