@@ -191,4 +191,22 @@ fi
 ![Ter1](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-04-docker-in-practice/task6_1ter.jpg)
 
 #Задача 6.2
+
+<details>
+ Попробовал вот вот такой <summary>Dockerfile</summary> не получилось, не совсем понимаю в чем дело, покопаюсь еще.
+  
+```
+FROM hashicorp/terraform:latest
+
+WORKDIR /app
+
+RUN cp /bin/terraform /app/terraform
+
+CMD ["cp", "/app/terraform", "/output/terraform"]
+```
+
+</details>
+
 #Задача 7
+
+*
