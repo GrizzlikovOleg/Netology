@@ -188,7 +188,7 @@ fi
 
 #Задача 6.1
 
-![Ter1](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-04-docker-in-practice/task6_1teк.jpg)
+![Ter1](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-04-docker-in-practice/task6_1ter.jpg)
 
 #Задача 6.2
 #Задача 7
