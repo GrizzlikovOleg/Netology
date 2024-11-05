@@ -140,3 +140,42 @@ sudo docker compose up -d
 ```
 
 </details>
+
+https://github.com/GrizzlikovOleg/shvirtd-example-python - FORK
+
+# Задача 5
+
+<details>
+  <summary>Bash backup script</summary>
+  
+```
+#!/bin/bash
+
+BACKUP_DIR="/opt/backup"
+
+set -a
+source "$BACKUP_DIR/.env"
+set +a
+
+mkdir -p "$BACKUP_DIR"
+
+TIMESTAMP=$(date +"%Y%m%d%H%M%S")
+BACKUP_FILE="$BACKUP_DIR/$MYSQL_DATABASE-$TIMESTAMP.sql"
+
+docker run --rm \
+  --network=python_app_project_backend \
+  mysql:latest \
+  sh -c "exec mysqldump -hmysql_db -u$MYSQL_USER -p$MYSQL_PASSWORD $MYSQL_DATABASE" > "$BACKUP_FILE"
+
+if [ $? -eq 0 ]; then
+    echo "Резервное копирование успешно: $BACKUP_FILE"
+else
+    echo "Ошибка резервного копирования"
+fi
+```
+
+</details>
+
+![Cron](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-04-docker-in-practice/task5cron.jpg)
+
+![Backups](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-04-docker-in-practice/task5backups.jpg)
