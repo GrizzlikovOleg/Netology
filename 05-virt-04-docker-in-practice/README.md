@@ -192,8 +192,9 @@ fi
 
 #Задача 6.2
 
+Попробовал вот такой Dockerfile не получилось, не совсем понимаю в чем дело, покопаюсь еще.
 <details>
- Попробовал вот вот такой <summary>Dockerfile</summary> не получилось, не совсем понимаю в чем дело, покопаюсь еще.
+<summary>Dockerfile</summary> 
   
 ```
 FROM hashicorp/terraform:latest
