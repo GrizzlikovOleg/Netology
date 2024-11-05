@@ -123,3 +123,20 @@
 # Задача 3
 
 ![MySql query](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-04-docker-in-practice/task3database.jpg)
+
+# Задача 4
+
+![MySql query](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-04-docker-in-practice/task4sql.jpg)
+
+<details>
+  <summary>Bash script</summary>
+  
+```
+git clone https://github.com/GrizzlikovOleg/shvirtd-example-python/ /opt/python_app_project
+
+cd /opt/python_app_project
+
+sudo docker compose up -d
+```
+
+</details>
