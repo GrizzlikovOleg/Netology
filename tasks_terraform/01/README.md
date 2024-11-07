@@ -1,6 +1,7 @@
 # Чек-лист готовности к домашнему заданию
 
-![Docker Ver](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_terraform/01/task01version.jpg)
+![Terraform Ver](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_terraform/01/task01version.jpg)
+![Terraform Ver](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_terraform/01/task01version_1.jpg)
 
 # Задача 1
 
