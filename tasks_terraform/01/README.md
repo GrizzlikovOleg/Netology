@@ -14,8 +14,6 @@
 
 </details>
 
-# Задача 2
-
 Неправильный синтаксис.
 Дано
 resource "docker_image" {
