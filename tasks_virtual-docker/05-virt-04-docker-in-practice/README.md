@@ -177,14 +177,14 @@ fi
 
 </details>
 
-![Cron](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-04-docker-in-practice/task5cron.jpg)
+![Cron](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_virtual-docker/05-virt-04-docker-in-practice/task5cron.jpg)
 
-![Backups](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-04-docker-in-practice/task5backups.jpg)
+![Backups](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_virtual-docker/05-virt-04-docker-in-practice/task5backups.jpg)
 
 # Задача 6
 
-![Ter1](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-04-docker-in-practice/task6ter_1.jpg)
-![Ter2](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-04-docker-in-practice/task6ter_2.jpg)
+![Ter1](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_virtual-docker/05-virt-04-docker-in-practice/task6ter_1.jpg)
+![Ter2](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_virtual-docker/05-virt-04-docker-in-practice/task6ter_2.jpg)
 ![Ter3](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-04-docker-in-practice/task6ter_3.jpg)
 
 #Задача 6.1
