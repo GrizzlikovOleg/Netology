@@ -1,12 +1,12 @@
 
 # Задача 0
 
-![Docker Ver](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-04-docker-in-practice/task0dockerver.jpg)
+![Docker Ver](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_virtual-docker/05-virt-04-docker-in-practice/task0dockerver.jpg)
 
 # Задача 1
 
-![YC Registry](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-04-docker-in-practice/task1ycreg_1.jpg)
-![YC Registry](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-04-docker-in-practice/task1ycreg_2.jpg)
+![YC Registry](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_virtual-docker/05-virt-04-docker-in-practice/task1ycreg_1.jpg)
+![YC Registry](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_virtual-docker/05-virt-04-docker-in-practice/task1ycreg_2.jpg)
 
 # Задача 2
 
@@ -123,11 +123,11 @@
 
 # Задача 3
 
-![MySql query](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-04-docker-in-practice/task3database.jpg)
+![MySql query](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_virtual-docker/05-virt-04-docker-in-practice/task3database.jpg)
 
 # Задача 4
 
-![MySql query](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-04-docker-in-practice/task4sql.jpg)
+![MySql query](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_virtual-docker/05-virt-04-docker-in-practice/task4sql.jpg)
 
 <details>
   <summary>Bash script</summary>
@@ -185,11 +185,11 @@ fi
 
 ![Ter1](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_virtual-docker/05-virt-04-docker-in-practice/task6ter_1.jpg)
 ![Ter2](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_virtual-docker/05-virt-04-docker-in-practice/task6ter_2.jpg)
-![Ter3](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-04-docker-in-practice/task6ter_3.jpg)
+![Ter3](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_virtual-docker/05-virt-04-docker-in-practice/task6ter_3.jpg)
 
 #Задача 6.1
 
-![Ter1](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-04-docker-in-practice/task6_1ter.jpg)
+![Ter1](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_virtual-docker/05-virt-04-docker-in-practice/task6_1ter.jpg)
 
 #Задача 6.2
 
