@@ -1,10 +1,8 @@
 # Чек-лист готовности к домашнему заданию
-
 ![Terraform Ver](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_terraform/01/task01version.jpg)
 ![Terraform Ver](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_terraform/01/task01version_1.jpg)
 
 # Задача 1
-
 <details>
   <summary>Это точно СЕКРЕТ! доступ только после уровня 009 ну или боГ, не смотри если не уверен!"</summary>
   
@@ -19,17 +17,15 @@
 ```
 resource "docker_image" {
 ```
-## должно быть
+должно быть
 ```
 resource "docker_image" "nginx" {
 ```
-
-## Ошибка в написании name
 Дано
 ```
 name  = "example_${random_password.random_string_FAKE.resulT}"
 ```
-## должно быть
+должно быть
 ```
 name  = "example_${random_password.random_string.result}"
 ```
@@ -39,8 +35,7 @@ name  = "example_${random_password.random_string.result}"
 ![docker](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_terraform/01/task01docker_ps.jpg)
 
 ## -auto-approve
-
-Кратко влечет за собой необратимые изменения, если в конфиге есть ошибки они будут везде, небезопастно.
+Кратко, влечет за собой необратимые изменения, если в конфиге есть ошибки они будут везде, небезопастно.
 
 ![docker](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_terraform/01/task01docker_ps_1.jpg)
 
@@ -238,6 +233,7 @@ name  = "example_${random_password.random_string.result}"
 
 </details>
 
+## keep_locally = true
 потому что в конфигурации ресурса docker_image указано свойство **keep_locally = true**. 
 ```
 resource "docker_image" "nginx" {
