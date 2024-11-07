@@ -242,5 +242,5 @@ resource "docker_image" "nginx" {
 }
 ```
 
-Дока
-**keep_locally (Optional) - If set to true, the image will not be removed from the local Docker daemon when the resource is destroyed. Default is false.**
+**Дока**:
+keep_locally (Optional) - If set to true, the image will not be removed from the local Docker daemon when the resource is destroyed. Default is false.
