@@ -13,23 +13,23 @@
 ```
 
 </details>
-----
-Неправильный синтаксис.
+
+## Неправильный синтаксис.
 Дано
 ```
 resource "docker_image" {
 ```
-должно быть
+## должно быть
 ```
 resource "docker_image" "nginx" {
 ```
 
-Ошибка в написании name
+## Ошибка в написании name
 Дано
 ```
 name  = "example_${random_password.random_string_FAKE.resulT}"
 ```
-должно быть
+## должно быть
 ```
 name  = "example_${random_password.random_string.result}"
 ```
