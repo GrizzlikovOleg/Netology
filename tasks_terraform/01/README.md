@@ -16,7 +16,9 @@
 
 Неправильный синтаксис.
 Дано
+```
 resource "docker_image" {
+```
 должно быть 
 resource "docker_image" "nginx" {
 
