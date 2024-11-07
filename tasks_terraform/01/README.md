@@ -238,10 +238,13 @@ name  = "example_${random_password.random_string.result}"
 
 </details>
 
-потому что в конфигурации ресурса docker_image указано свойство keep_locally = true. 
+потому что в конфигурации ресурса docker_image указано свойство **keep_locally = true**. 
 ```
 resource "docker_image" "nginx" {
   name         = "nginx:latest"
-  **keep_locally = true**
+  keep_locally = true
 }
 ```
+
+Дока
+**keep_locally (Optional) - If set to true, the image will not be removed from the local Docker daemon when the resource is destroyed. Default is false.**
