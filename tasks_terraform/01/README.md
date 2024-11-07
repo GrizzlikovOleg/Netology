@@ -5,9 +5,8 @@
 
 # Задача 1
 
-Результат
 <details>
-  <summary>Result</summary>
+  <summary>Результат</summary>
   
 ```
 "result": "pM7RXgg3nxfQ36fN",
