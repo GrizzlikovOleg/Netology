@@ -1,6 +1,6 @@
-# Задача 0
+# Чек-лист готовности к домашнему заданию
 
-![Docker Ver](https://github.com/GrizzlikovOleg/Netology/blob/main/05-virt-04-docker-in-practice/task0dockerver.jpg)
+![Docker Ver](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_terraform/01/task01version.jpg)
 
 # Задача 1
 
