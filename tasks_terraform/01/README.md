@@ -242,6 +242,6 @@ name  = "example_${random_password.random_string.result}"
 ```
 resource "docker_image" "nginx" {
   name         = "nginx:latest"
-  [b]keep_locally = true[/b]
+  **keep_locally = true**
 }
 ```
