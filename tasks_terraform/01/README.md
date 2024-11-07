@@ -243,4 +243,4 @@ resource "docker_image" "nginx" {
 ```
 
 **Дока**:
-keep_locally (Optional) - If set to true, the image will not be removed from the local Docker daemon when the resource is destroyed. Default is false.
+[keep_locally](https://registry.terraform.io/providers/kreuzwerker/docker/latest/docs/resources/image.html#keep_locally-1) (Boolean) If true, then the Docker image won't be deleted on destroy operation. If this is false, it will delete the image from the docker local storage on destroy operation.
