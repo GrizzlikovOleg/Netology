@@ -36,6 +36,8 @@ name  = "example_${random_password.random_string.result}"
 
 Скрин валидации после исправлений.
 ![validate](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_terraform/01/task01validate.jpg)
+Docker
+![validate](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_terraform/01/task01docker_ps.jpg)
 
 # Задача 3
 
