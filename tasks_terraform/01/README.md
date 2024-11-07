@@ -40,7 +40,7 @@ name  = "example_${random_password.random_string.result}"
 ![docker](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_terraform/01/task01docker_ps_1.jpg)
 
 <details>
-  <summary>terraform.tfstate</summary>
+  <summary>terraform.tfstate befor DELETE</summary>
   
 ```
 {
@@ -227,6 +227,22 @@ name  = "example_${random_password.random_string.result}"
       ]
     }
   ],
+  "check_results": null
+}
+```
+
+</details>
+<details>
+  <summary>terraform.tfstate after DELETE</summary>
+  
+```
+{
+  "version": 4,
+  "terraform_version": "1.8.4",
+  "serial": 18,
+  "lineage": "e47be478-225d-93a3-73d7-9ed9c2f81af5",
+  "outputs": {},
+  "resources": [],
   "check_results": null
 }
 ```
