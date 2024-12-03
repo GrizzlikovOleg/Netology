@@ -468,15 +468,30 @@ locals {
 
 # Задача 6
 
-![2vm's](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_terraform/02/task02terraform_local.png)
+![2vm's](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_terraform/02/task02terraform_vmsRes.png)
 
 <details>
-  <summary>local</summary>
+  <summary>Res</summary>
   
 ```
-locals {
-  vm_web_name = "${var.vm_web_name}-${var.web_zone}"
-  vm_db_name = "${var.vm_db_name}-${var.db_zone}"
+variable "vms_resources" {
+  type = map(object({
+    cores         = number
+    memory        = number
+    core_fraction = number
+  }))
+  default = {
+    web = {
+      cores         = 2
+      memory        = 1
+      core_fraction = 20
+    }
+    db = {
+      cores         = 2
+      memory        = 2
+      core_fraction = 20
+    }
+  }
 }
 ```
 
