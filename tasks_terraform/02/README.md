@@ -168,8 +168,6 @@ variable "vms_ssh_public_root_key" {
 
 # Задача 3
 
-Понимаю что задача terraform это в первую очередь автоматизация, данный пример скриптов не идеален, для автоматизации, но выполняет поставленную задачу.
-
 ![2vm's](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_terraform/02/task02terraform_2vms.png)
 
 <details>
