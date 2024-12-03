@@ -445,3 +445,7 @@ variable "db_zone" {
 ```
 
 </details>
+
+# Задача 3
+
+![2vm's](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_terraform/02/task02terraform_output.png)
