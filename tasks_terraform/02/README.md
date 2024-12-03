@@ -165,255 +165,285 @@ variable "vms_ssh_public_root_key" {
 
 </details>
 
-## Неправильный синтаксис.
-Дано
-```
-resource "docker_image" {
-```
-должно быть
-```
-resource "docker_image" "nginx" {
-```
-Дано
-```
-name  = "example_${random_password.random_string_FAKE.resulT}"
-```
-должно быть
-```
-name  = "example_${random_password.random_string.result}"
-```
 
-![validate](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_terraform/01/task01validate.jpg)
+# Задача 3
 
-![docker](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_terraform/01/task01docker_ps.jpg)
+Понимаю что задача terraform это в первую очередь автоматизация, данный пример скриптов не идеален, для автоматизации, но выполняет поставленную задачу.
 
-## -auto-approve
-Кратко, влечет за собой необратимые изменения, если в конфиге есть ошибки они будут везде, небезопастно.
-
-![docker](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_terraform/01/task01docker_ps_1.jpg)
+![2vm's](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_terraform/02/task02terraform_2vms.png)
 
 <details>
-  <summary>terraform.tfstate befor DELETE</summary>
+  <summary>main</summary>
   
 ```
-{
-  "version": 4,
-  "terraform_version": "1.8.4",
-  "serial": 14,
-  "lineage": "e47be478-225d-93a3-73d7-9ed9c2f81af5",
-  "outputs": {},
-  "resources": [
-    {
-      "mode": "managed",
-      "type": "docker_container",
-      "name": "nginx",
-      "provider": "provider[\"registry.terraform.io/kreuzwerker/docker\"]",
-      "instances": [
-        {
-          "schema_version": 2,
-          "attributes": {
-            "attach": false,
-            "bridge": "",
-            "capabilities": [],
-            "cgroupns_mode": null,
-            "command": [
-              "nginx",
-              "-g",
-              "daemon off;"
-            ],
-            "container_logs": null,
-            "container_read_refresh_timeout_milliseconds": 15000,
-            "cpu_set": "",
-            "cpu_shares": 0,
-            "destroy_grace_seconds": null,
-            "devices": [],
-            "dns": null,
-            "dns_opts": null,
-            "dns_search": null,
-            "domainname": "",
-            "entrypoint": [
-              "/docker-entrypoint.sh"
-            ],
-            "env": [],
-            "exit_code": null,
-            "gpus": null,
-            "group_add": null,
-            "healthcheck": null,
-            "host": [],
-            "hostname": "a4af1467e69f",
-            "id": "a4af1467e69f1ed4bca399d429ad98dbc7564f784b666b74fb75b039007e5eda",
-            "image": "sha256:3b25b682ea82b2db3cc4fd48db818be788ee3f902ac7378090cf2624ec2442df",
-            "init": false,
-            "ipc_mode": "private",
-            "labels": [],
-            "log_driver": "json-file",
-            "log_opts": null,
-            "logs": false,
-            "max_retry_count": 0,
-            "memory": 0,
-            "memory_swap": 0,
-            "mounts": [],
-            "must_run": true,
-            "name": "hello_world",
-            "network_data": [
-              {
-                "gateway": "172.17.0.1",
-                "global_ipv6_address": "",
-                "global_ipv6_prefix_length": 0,
-                "ip_address": "172.17.0.2",
-                "ip_prefix_length": 16,
-                "ipv6_gateway": "",
-                "mac_address": "02:42:ac:11:00:02",
-                "network_name": "bridge"
-              }
-            ],
-            "network_mode": "bridge",
-            "networks_advanced": [],
-            "pid_mode": "",
-            "ports": [
-              {
-                "external": 9090,
-                "internal": 80,
-                "ip": "0.0.0.0",
-                "protocol": "tcp"
-              }
-            ],
-            "privileged": false,
-            "publish_all_ports": false,
-            "read_only": false,
-            "remove_volumes": true,
-            "restart": "no",
-            "rm": false,
-            "runtime": "runc",
-            "security_opts": [],
-            "shm_size": 64,
-            "start": true,
-            "stdin_open": false,
-            "stop_signal": "SIGQUIT",
-            "stop_timeout": 0,
-            "storage_opts": null,
-            "sysctls": null,
-            "tmpfs": null,
-            "tty": false,
-            "ulimit": [],
-            "upload": [],
-            "user": "",
-            "userns_mode": "",
-            "volumes": [],
-            "wait": false,
-            "wait_timeout": 60,
-            "working_dir": ""
-          },
-          "sensitive_attributes": [],
-          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjIifQ==",
-          "dependencies": [
-            "docker_image.nginx"
-          ]
-        }
-      ]
-    },
-    {
-      "mode": "managed",
-      "type": "docker_image",
-      "name": "nginx",
-      "provider": "provider[\"registry.terraform.io/kreuzwerker/docker\"]",
-      "instances": [
-        {
-          "schema_version": 0,
-          "attributes": {
-            "build": [],
-            "force_remove": null,
-            "id": "sha256:3b25b682ea82b2db3cc4fd48db818be788ee3f902ac7378090cf2624ec2442dfnginx:latest",
-            "image_id": "sha256:3b25b682ea82b2db3cc4fd48db818be788ee3f902ac7378090cf2624ec2442df",
-            "keep_locally": true,
-            "name": "nginx:latest",
-            "platform": null,
-            "pull_triggers": null,
-            "repo_digest": "nginx@sha256:28402db69fec7c17e179ea87882667f1e054391138f77ffaf0c3eb388efc3ffb",
-            "triggers": null
-          },
-          "sensitive_attributes": [],
-          "private": "bnVsbA=="
-        }
-      ]
-    },
-    {
-      "mode": "managed",
-      "type": "random_password",
-      "name": "random_string",
-      "provider": "provider[\"registry.terraform.io/hashicorp/random\"]",
-      "instances": [
-        {
-          "schema_version": 3,
-          "attributes": {
-            "bcrypt_hash": "$2a$10$mkwXInNt1Qe5CqWwGU5IOuvM80DnNHaWeetb379/bGk.IqvI7b/Va",
-            "id": "none",
-            "keepers": null,
-            "length": 16,
-            "lower": true,
-            "min_lower": 1,
-            "min_numeric": 1,
-            "min_special": 0,
-            "min_upper": 1,
-            "number": true,
-            "numeric": true,
-            "override_special": null,
-            "result": "pM7RXgg3nxfQ36fN",
-            "special": false,
-            "upper": true
-          },
-          "sensitive_attributes": [
-            [
-              {
-                "type": "get_attr",
-                "value": "bcrypt_hash"
-              }
-            ],
-            [
-              {
-                "type": "get_attr",
-                "value": "result"
-              }
-            ]
-          ]
-        }
-      ]
+resource "yandex_vpc_network" "web" {
+  name = var.vpc_web_name
+}
+resource "yandex_vpc_network" "db" {
+  name = var.vpc_db_name
+}
+
+
+#web
+
+resource "yandex_vpc_subnet" "web" {
+  name           = var.vpc_web_name
+  zone           = var.web_zone
+  network_id     = yandex_vpc_network.web.id
+  v4_cidr_blocks = var.web_cidr
+}
+
+data "yandex_compute_image" "ubuntu" {
+  family = var.vm_web_image_family
+}
+resource "yandex_compute_instance" "platform" {
+  name        = var.vm_web_name
+  platform_id = var.vm_web_platform_id
+  resources {
+    cores         = var.vm_web_cores
+    memory        = var.vm_web_memory
+    core_fraction = var.vm_web_core_fraction
+  }
+  boot_disk {
+    initialize_params {
+      image_id = data.yandex_compute_image.ubuntu.image_id
     }
-  ],
-  "check_results": null
+  }
+  scheduling_policy {
+    preemptible = var.vm_web_preemptible
+  }
+  network_interface {
+    subnet_id = yandex_vpc_subnet.web.id
+    nat       = var.vm_web_nat
+  }
+  metadata = {
+    serial-port-enable = "1"
+    ssh-keys           = "ubuntu:${var.vms_ssh_public_root_key}"
+  }
+
+  zone = var.web_zone
+}
+
+#db
+
+resource "yandex_vpc_subnet" "db" {
+  name           = var.vpc_db_name
+  zone           = var.db_zone
+  network_id     = yandex_vpc_network.db.id
+  v4_cidr_blocks = var.db_cidr
+}
+
+resource "yandex_compute_instance" "db" {
+  name        = var.vm_db_name
+  platform_id = var.vm_db_platform_id
+  resources {
+    cores         = var.vm_db_cores
+    memory        = var.vm_db_memory
+    core_fraction = var.vm_db_core_fraction
+  }
+  boot_disk {
+    initialize_params {
+      image_id = data.yandex_compute_image.ubuntu.image_id
+    }
+  }
+  scheduling_policy {
+    preemptible = var.vm_db_preemptible
+  }
+  network_interface {
+    subnet_id = yandex_vpc_subnet.db.id
+    nat       = var.vm_db_nat
+  }
+  metadata = {
+    serial-port-enable = "1"
+    ssh-keys           = "ubuntu:${var.vms_ssh_public_root_key}"
+  }
+
+  zone = var.db_zone
 }
 ```
 
 </details>
+
 <details>
-  <summary>terraform.tfstate after DELETE</summary>
+  <summary>var</summary>
   
 ```
-{
-  "version": 4,
-  "terraform_version": "1.8.4",
-  "serial": 18,
-  "lineage": "e47be478-225d-93a3-73d7-9ed9c2f81af5",
-  "outputs": {},
-  "resources": [],
-  "check_results": null
+###cloud vars
+
+
+variable "cloud_id" {
+  type        = string
+  description = "https://cloud.yandex.ru/docs/resource-manager/operations/cloud/get-id"
+}
+
+variable "folder_id" {
+  type        = string
+  description = "https://cloud.yandex.ru/docs/resource-manager/operations/folder/get-id"
+}
+
+variable "default_zone" {
+  type        = string
+  default     = "ru-central1-a"
+  description = "https://cloud.yandex.ru/docs/overview/concepts/geo-scope"
+}
+variable "default_cidr" {
+  type        = list(string)
+  default     = ["10.0.1.0/24"]
+  description = "https://cloud.yandex.ru/docs/vpc/operations/subnet-create"
+}
+
+###ssh vars
+
+variable "vms_ssh_public_root_key" {
+  type        = string
+  default     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIONzynx0+KpSmTiPLDDRBMgmd23dgAfWODkx6hZZ7lNd admin@terraform"
+  description = "ssh-keygen -t ed25519"
 }
 ```
 
 </details>
 
-## keep_locally = true
-потому что в конфигурации ресурса docker_image указано свойство **keep_locally = true**. 
+<details>
+  <summary>vms</summary>
+  
 ```
-resource "docker_image" "nginx" {
-  name         = "nginx:latest"
-  keep_locally = true
+###cloud vars
+
+#web
+
+variable "vpc_web_name" {
+  type        = string
+  default     = "web"
+  description = "VPC network & subnet name"
+}
+
+variable "web_cidr" {
+  type        = list(string)
+  default     = ["10.0.1.0/24"]
+  description = "https://cloud.yandex.ru/docs/vpc/operations/subnet-create"
+}
+
+variable "vm_web_image_family" {
+  type        = string
+  default     = "ubuntu-2004-lts"
+  description = "Image of VM"
+}
+
+variable "vm_web_name" {
+  type        = string
+  default     = "netology-develop-platform-web"
+  description = "Name of VM"
+}
+
+variable "vm_web_platform_id" {
+  type        = string
+  default     = "standard-v3"
+  description = "Platform ID"
+}
+
+variable "vm_web_cores" {
+  type        = number
+  default     = 2
+  description = "CPU cores"
+}
+
+variable "vm_web_memory" {
+  type        = number
+  default     = 1
+  description = "Memory"
+}
+
+variable "vm_web_core_fraction" {
+  type        = number
+  default     = 20
+  description = "% of usage"
+}
+
+variable "vm_web_preemptible" {
+  type        = bool
+  default     = true
+  description = "preemptible off/on"
+}
+
+variable "vm_web_nat" {
+  type        = bool
+  default     = true
+  description = "Nat off/on"
+}
+
+variable "web_zone" {
+  type        = string
+  default     = "ru-central1-a"
+  description = "Zone for VM"
+}
+
+#db
+
+variable "vpc_db_name" {
+  type        = string
+  default     = "db"
+  description = "VPC network & subnet name"
+}
+
+variable "db_cidr" {
+  type        = list(string)
+  default     = ["10.0.2.0/24"]
+  description = "https://cloud.yandex.ru/docs/vpc/operations/subnet-create"
+}
+
+variable "vm_db_image_family" {
+  type        = string
+  default     = "ubuntu-2004-lts"
+  description = "Image of VM"
+}
+
+variable "vm_db_name" {
+  type        = string
+  default     = "netology-develop-platform-db"
+  description = "Name of VM"
+}
+
+variable "vm_db_platform_id" {
+  type        = string
+  default     = "standard-v3"
+  description = "Platform ID"
+}
+
+variable "vm_db_cores" {
+  type        = number
+  default     = 2
+  description = "CPU cores"
+}
+
+variable "vm_db_memory" {
+  type        = number
+  default     = 2
+  description = "Memory"
+}
+
+variable "vm_db_core_fraction" {
+  type        = number
+  default     = 20
+  description = "% of usage"
+}
+
+variable "vm_db_preemptible" {
+  type        = bool
+  default     = true
+  description = "preemptible off/on"
+}
+
+variable "vm_db_nat" {
+  type        = bool
+  default     = true
+  description = "Nat off/on"
+}
+
+variable "db_zone" {
+  type        = string
+  default     = "ru-central1-b"
+  description = "Zone for VM"
 }
 ```
 
-**Дока**:
-[keep_locally](https://registry.terraform.io/providers/kreuzwerker/docker/latest/docs/resources/image.html#keep_locally-1) (Boolean) - If true, then the Docker image won't be deleted on destroy operation. If this is false, it will delete the image from the docker local storage on destroy operation.
-
-# Задача 2
-
-**продолжаю работу, если успею подгружу.**
+</details>
