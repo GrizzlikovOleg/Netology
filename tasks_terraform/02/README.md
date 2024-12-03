@@ -449,3 +449,35 @@ variable "db_zone" {
 # Задача 4
 
 ![2vm's](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_terraform/02/task02terraform_output.png)
+
+# Задача 5
+
+![2vm's](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_terraform/02/task02terraform_local.png)
+
+<details>
+  <summary>var</summary>
+  
+```
+locals {
+  vm_web_name = "${var.vm_web_name}-${var.web_zone}"
+  vm_db_name = "${var.vm_db_name}-${var.db_zone}"
+}
+```
+
+</details>
+
+# Задача 6
+
+![2vm's](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_terraform/02/task02terraform_local.png)
+
+<details>
+  <summary>var</summary>
+  
+```
+locals {
+  vm_web_name = "${var.vm_web_name}-${var.web_zone}"
+  vm_db_name = "${var.vm_db_name}-${var.db_zone}"
+}
+```
+
+</details>
