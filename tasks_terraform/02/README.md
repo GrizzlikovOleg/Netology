@@ -11,25 +11,156 @@ core_fraction = 5: Позволяет ограничить использова�
 
 # Задача 2
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+![Var](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_terraform/02/task02terraform_var.png)
 
 <details>
-  <summary>Секрет</summary>
+  <summary>New main</summary>
   
 ```
-"result": "pM7RXgg3nxfQ36fN",
+resource "yandex_vpc_network" "develop" {
+  name = var.vpc_name
+}
+resource "yandex_vpc_subnet" "develop" {
+  name           = var.vpc_name
+  zone           = var.default_zone
+  network_id     = yandex_vpc_network.develop.id
+  v4_cidr_blocks = var.default_cidr
+}
+
+
+data "yandex_compute_image" "ubuntu" {
+  family = var.vm_web_image_family
+}
+resource "yandex_compute_instance" "platform" {
+  name        = var.vm_web_name
+  platform_id = var.vm_web_platform_id
+
+  resources {
+    cores         = var.vm_web_cores
+    memory        = var.vm_web_memory
+    core_fraction = var.vm_web_core_fraction
+  }
+  boot_disk {
+    initialize_params {
+      image_id = data.yandex_compute_image.ubuntu.image_id
+    }
+  }
+  scheduling_policy {
+    preemptible = var.vm_web_preemptible
+  }
+
+  network_interface {
+    subnet_id = yandex_vpc_subnet.develop.id
+    nat       = var.vm_web_nat
+  }
+
+  metadata = {
+    serial-port-enable = "1"
+    ssh-keys           = "ubuntu:${var.vms_ssh_public_root_key}"
+  }
+
+}
+```
+
+</details>
+
+<details>
+  <summary>New var</summary>
+  
+```
+###cloud vars
+
+#new code
+
+#yandex_compute_image
+
+variable "vm_web_image_family" {
+  type        = string
+  default     = "ubuntu-2004-lts"
+  description = "Image of VM"
+}
+
+#yandex_compute_instance
+
+variable "vm_web_name" {
+  type        = string
+  default     = "netology-develop-platform-web"
+  description = "Name of VM"
+}
+
+variable "vm_web_platform_id" {
+  type        = string
+  default     = "standard-v3"
+  description = "Platform ID"
+}
+
+variable "vm_web_cores" {
+  type        = number
+  default     = 2
+  description = "CPU cores"
+}
+
+variable "vm_web_memory" {
+  type        = number
+  default     = 1
+  description = "Memory"
+}
+
+variable "vm_web_core_fraction" {
+  type        = number
+  default     = 20
+  description = "% of usage"
+}
+
+variable "vm_web_preemptible" {
+  type        = bool
+  default     = true
+  description = "preemptible off/on"
+}
+
+variable "vm_web_nat" {
+  type        = bool
+  default     = true
+  description = "Nat off/on"
+}
+
+#old code
+
+variable "cloud_id" {
+  type        = string
+  description = "https://cloud.yandex.ru/docs/resource-manager/operations/cloud/get-id"
+}
+
+variable "folder_id" {
+  type        = string
+  description = "https://cloud.yandex.ru/docs/resource-manager/operations/folder/get-id"
+}
+
+variable "default_zone" {
+  type        = string
+  default     = "ru-central1-a"
+  description = "https://cloud.yandex.ru/docs/overview/concepts/geo-scope"
+}
+variable "default_cidr" {
+  type        = list(string)
+  default     = ["10.0.1.0/24"]
+  description = "https://cloud.yandex.ru/docs/vpc/operations/subnet-create"
+}
+
+variable "vpc_name" {
+  type        = string
+  default     = "develop"
+  description = "VPC network & subnet name"
+}
+
+
+###ssh vars
+
+variable "vms_ssh_public_root_key" {
+  type        = string
+  default     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIONzynx0+KpSmTiPLDDRBMgmd23dgAfWODkx6hZZ7lNd admin@terraform"
+  description = "ssh-keygen -t ed25519"
+}
 ```
 
 </details>
