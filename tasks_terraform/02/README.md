@@ -1,8 +1,28 @@
-# Чек-лист готовности к домашнему заданию
-![Terraform Ver](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_terraform/01/task01version.jpg)
-![Terraform Ver](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_terraform/01/task01version_1.jpg)
-
 # Задача 1
+
+![ЛК YC](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_terraform/02/task02terraform_YcIP.png)
+
+![Curl](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_terraform/02/task02terraform_CurlIP.png)
+
+Суть допущенных ошибок в неправильной конфигурации VM, потребовалось заглянуть в документацию чтобы правильно указать параметры создаваемой VM.
+
+preemptible = true:  ВМ является прерываемой, что дешевле.
+core_fraction = 5: Позволяет ограничить использование процессорного времени. В данном примере это 5%.
+
+# Задача 2
+
+
+
+
+
+
+
+
+
+
+
+
+
 <details>
   <summary>Секрет</summary>
   
