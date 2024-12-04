@@ -31,14 +31,3 @@ variable "vpc_name" {
   description = "VPC network&subnet name"
 }
 
-variable "hostnames" {
-  type = map(string)
-  default = {
-    web-1    = "web1"
-    web-2    = "web2"
-    main     = "db-main"
-    replica  = "db-replica"
-    storage  = "storage"
-  }
-  description = "FQDN"
-}
