@@ -1,6 +1,6 @@
 # Задача 1
 
-![Группа Безопасности](https://github.com/GrizzlikovOleg/Netology/blob/main/task_terraform/03/task03terraform_SecG.png)
+![Группа Безопасности](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_terraform/03/task03terraform_SecG.png)
 
 # Задача 2
 
