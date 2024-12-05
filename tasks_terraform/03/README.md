@@ -4,4 +4,4 @@
 
 # Задача 2-5
 
-https://github.com/GrizzlikovOleg/Netology/tree/main/tasks_terraform/03/terraform-03
+https://github.com/GrizzlikovOleg/Netology/tree/terraform-03/tasks_terraform/03/src
