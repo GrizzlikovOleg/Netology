@@ -8,7 +8,7 @@
 
 # Задача 2
 
-![module](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_terraform/04/task04terraform_ModuleVPCDEV.png)
+![module](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_terraform/04/task04terraform_ModuleVPCDEV-t.png)
 
 <details>
   <summary>Doca</summary>
