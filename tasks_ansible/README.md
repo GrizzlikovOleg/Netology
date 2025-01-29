@@ -3,7 +3,7 @@
 # Задача 1
 При выполнении вывелось следующее, смотри скрин.
 
-![ansible](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_terraform/04/task04terraform_Mark0Nginx-t.png)
+![ansible](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_ansible/ansible_01/ansiblefacts.png)
 
 # Задача 2
 
