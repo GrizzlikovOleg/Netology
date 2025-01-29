@@ -1,13 +1,17 @@
 # ANSIBLE_01
 
 # Задача 1
-При выполнении вывелось следующее, смотри скрин.
+
+Facts = 12
 
 ![ansible](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_ansible/ansible_01/ansiblefacts.png)
 
 # Задача 2
 
-![module](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_terraform/04/task04terraform_ModuleVPCDEV-t.png)
+Facts = all default fact
+
+![ansible](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_ansible/ansible_01/ansiblefacts.png)
+
 
 <details>
   <summary>Doca</summary>
