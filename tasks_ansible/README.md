@@ -16,7 +16,11 @@ Facts = all default fact
 # 4
 
 ![ansible](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_ansible/ansible_01/ansiblefacts_prod.png)
-# 5
+# 5-6
+Изменил факты
 
 ![ansible](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_ansible/ansible_01/ansiblefacts_changed2.png)
-# 6
+# 7-8
+
+![ansible](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_ansible/ansible_01/ansiblefacts_encrypt.png)
+![ansible](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_ansible/ansible_01/ansiblefacts_askpass.png)
