@@ -24,3 +24,6 @@ Facts = all default fact
 
 ![ansible](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_ansible/ansible_01/ansiblefacts_encrypt.png)
 ![ansible](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_ansible/ansible_01/ansiblefacts_askpass.png)
+# 9-13
+
+![ansible](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_ansible/ansible_01/ansiblefacts_pod_local.png)
