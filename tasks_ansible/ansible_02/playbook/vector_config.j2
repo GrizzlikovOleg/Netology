@@ -1,0 +1,8 @@
+[sources.in]
+type = "file"
+include = ["/var/log/*.log"]
+
+[sinks.out]
+type = "console"
+inputs = ["in"]
+encoding.codec = "json"
