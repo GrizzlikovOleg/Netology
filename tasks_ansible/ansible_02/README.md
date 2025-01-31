@@ -39,8 +39,8 @@ clickhouse: название группы параметров для серви
 clickhouse_version: "22.3.3.44": Версия для установки.
 clickhouse_packages: ["clickhouse-client", "clickhouse-server", "clickhouse-common-static"]: Список пакетов для установки.
 vector: название группы параметров для сервиса Vektor
-vector_version: "0.44.0": Версия для установки.
-**Общие параметры применяются ко всем VM:**  
+vector_version: "0.44.0": Версия для установки.  
+**Общие параметры применяются ко всем VM:**    
 ansible_python_interpreter: выбор интерпритатора для работы, определен как Python3 /usr/bin/python3.
 ansible_user, ansible_ssh_private_key_file: Аторизационные параметры для работы по SSH.
 
