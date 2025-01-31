@@ -3,7 +3,7 @@
 
 # 5
 Проверка линтом
-![ansible-lint](https://github.com/GrizzlikovOleg/Netology/tree/main/tasks_ansible/ansible_02/ans_02_lint.png)
+![ansible-lint](https://github.com/GrizzlikovOleg/Netology/main/tasks_ansible/ansible_02/ans_02_lint.png)
 # 6
 Check
 ![ansible_check](https://github.com/GrizzlikovOleg/Netology/tree/main/tasks_ansible/ansible_02/ans_02_check1.png)
