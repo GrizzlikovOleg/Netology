@@ -6,7 +6,7 @@
 ![ansible-lint](https://github.com/GrizzlikovOleg/Netology/main/tasks_ansible/ansible_02/ans_02_lint.png)
 # 6
 Check
-![ansible_check](https://github.com/GrizzlikovOleg/Netology/tree/main/tasks_ansible/ansible_02/ans_02_check1.png)
+![ansible_check](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_ansible/ansible_02/ans_02_check1.png)
 ![ansible_check](https://github.com/GrizzlikovOleg/Netology/tree/main/tasks_ansible/ansible_02/ans_02_check2.png)
 # 7
 --diff
