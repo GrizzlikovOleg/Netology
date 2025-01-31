@@ -1,5 +1,6 @@
 
 
+
 # 5
 Проверка линтом
 ![ansible-lint](https://github.com/GrizzlikovOleg/Netology/tree/main/tasks_ansible/ansible_02/ans_02_lint.png)
