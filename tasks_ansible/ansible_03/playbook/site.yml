@@ -1,18 +1,6 @@
 ---
-- name: Install Python 3 on CentOS 7
-  hosts: all
-  become: true
-  gather_facts: false 
-  tasks:
-    - name: Install Python 3
-      ansible.builtin.raw: yum install -y python3
-      changed_when: false
-      when: ansible_check_mode == false
-
 - name: Install Clickhouse
   hosts: clickhouse
-  vars:
-    ansible_python_interpreter: /usr/bin/python3
   handlers:
     - name: Start clickhouse service
       become: true
@@ -20,104 +8,134 @@
         name: clickhouse-server
         state: restarted
   tasks:
-    - name: Add ClickHouse repository
-      become: true
-      ansible.builtin.yum_repository:
-        name: clickhouse
-        description: ClickHouse Yandex repo
-        baseurl: https://packages.clickhouse.com/rpm/stable/
-        gpgcheck: true
-        gpgkey: https://packages.clickhouse.com/rpm/stable/repodata/repomd.xml.key
-        enabled: true
-
-    - name: Install ClickHouse packages
+    - name: Get clickhouse distrib and handle errors
+      block:
+        - name: Get clickhouse distrib
+          ansible.builtin.get_url:
+            url: "https://packages.clickhouse.com/rpm/stable/{{ item }}-{{ clickhouse_version }}.noarch.rpm"
+            dest: "./{{ item }}-{{ clickhouse_version }}.rpm"
+            mode: '0644'
+          loop: "{{ clickhouse_packages }}"
+        - name: Get clickhouse distrib (fallback)
+          ansible.builtin.get_url:
+            url: "https://packages.clickhouse.com/rpm/stable/clickhouse-common-static-{{ clickhouse_version }}.x86_64.rpm"
+            dest: "./clickhouse-common-static-{{ clickhouse_version }}.rpm"
+            mode: '0644'
+      rescue:
+        - name: Get clickhouse distrib (fallback)
+          ansible.builtin.get_url:
+            url: "https://packages.clickhouse.com/rpm/stable/clickhouse-common-static-{{ clickhouse_version }}.x86_64.rpm"
+            dest: "./clickhouse-common-static-{{ clickhouse_version }}.rpm"
+            mode: '0644'
+    - name: Install clickhouse packages
       become: true
       ansible.builtin.yum:
         name:
-          - clickhouse-server
-          - clickhouse-client
-        state: present
-        disable_gpg_check: yes
+          - clickhouse-common-static-{{ clickhouse_version }}.rpm
+          - clickhouse-client-{{ clickhouse_version }}.rpm
+          - clickhouse-server-{{ clickhouse_version }}.rpm
       notify: Start clickhouse service
-
     - name: Flush handlers
       ansible.builtin.meta: flush_handlers
-
-    - name: Create database logs
-      ansible.builtin.command: "clickhouse-client -q 'create database logs;'"
+    - name: Create database
+      ansible.builtin.command:
+        cmd: "clickhouse-client -q 'create database logs;'"
       register: create_db
       failed_when: create_db.rc != 0 and create_db.rc != 82
       changed_when: create_db.rc == 0
 
 - name: Install and configure Vector
   hosts: vector
-  vars:
-    ansible_python_interpreter: /usr/bin/python3
-    vector_version: "0.44.0"
-    vector_install_dir: "/opt/vector"
-  handlers:
-    - name: Restart vector service
-      become: true
-      ansible.builtin.service:
-        name: vector
-        state: restarted
+  gather_facts: true
+  become: true
   tasks:
-    - name: Install required dependencies
-      become: true
-      ansible.builtin.yum:
-        name: tar
-        state: present
-
-    - name: Create Vector installation directory
-      become: true
-      ansible.builtin.file:
-        path: "{{ vector_install_dir }}"
-        state: directory
-        mode: '0755'
-
-    - name: Download Vector
+    - name: Download Vector musl distribution
       ansible.builtin.get_url:
-        url: "https://github.com/vectordotdev/vector/releases/download/v{{ vector_version }}/vector-{{ vector_version }}-x86_64-unknown-linux-gnu.tar.gz"
+        url: "https://packages.timber.io/vector/{{ vector_version }}/vector-{{ vector_version }}-x86_64-unknown-linux-musl.tar.gz"
         dest: "/tmp/vector-{{ vector_version }}.tar.gz"
         mode: '0644'
 
-    - name: Extract Vector
-      become: true
+    - name: Unarchive the Vector distribution
       ansible.builtin.unarchive:
         src: "/tmp/vector-{{ vector_version }}.tar.gz"
-        dest: "{{ vector_install_dir }}"
+        dest: "/opt/vector/"
         remote_src: true
+        extra_opts:
+          - "--strip-components=2"
 
-    - name: Deploy Vector config
-      become: true
-      ansible.builtin.template:
-        src: vector_config.j2
-        dest: "{{ vector_install_dir }}/vector.toml"
-        mode: '0644'
-      notify: Restart vector service
+    - name: Ensure Vector binary is executable
+      ansible.builtin.file:
+        path: "/opt/vector/bin/vector"
+        mode: '0755'
 
-    - name: Create systemd service for Vector
-      become: true
-      ansible.builtin.copy:
-        content: |
-          [Unit]
-          Description=Vector
-          After=network.target
+    - name: Install Vector (verify the binary)
+      ansible.builtin.command:
+        cmd: "/opt/vector/bin/vector --help"
+      changed_when: false
 
-          [Service]
-          ExecStart={{ vector_install_dir }}/vector --config {{ vector_install_dir }}/vector.toml
-          Restart=always
-
-          [Install]
-          WantedBy=multi-user.target
-        dest: /etc/systemd/system/vector.service
-        mode: '0644'
-      notify: Restart vector service
-
-    - name: Enable and start Vector service
-      ansible.builtin.service:
+    - name: Restart Vector if configuration changes
+      ansible.builtin.systemd:
         name: vector
-        enabled: true
+        state: restarted
+      notify:
+        - Restart Vector
+
+  handlers:
+    - name: Restart Vector
+      ansible.builtin.systemd:
+        name: vector
+        state: restarted
+
+- name: Install and configure LightHouse
+  hosts: lighthouse
+  become: true
+  tasks:
+    - name: Add Nginx repository (if needed)
+      ansible.builtin.yum_repository:
+        name: nginx
+        description: Nginx Repository
+        baseurl: https://nginx.org/packages/centos/7/x86_64/
+        gpgcheck: 1
+        gpgkey: https://nginx.org/keys/nginx_signing.key
+        enabled: 1
+
+    - name: Install Git and Nginx
+      ansible.builtin.yum:
+        name:
+          - git
+          - nginx
+        state: present
+
+    - name: Clone LightHouse repository
+      ansible.builtin.git:
+        repo: "https://github.com/VKCOM/lighthouse.git"
+        dest: "/var/www/lighthouse"
+        version: master
+
+    - name: Configure Nginx for LightHouse
+      ansible.builtin.copy:
+        dest: "/etc/nginx/conf.d/lighthouse.conf"
+        mode: '0644'
+        content: |
+          server {
+              listen 80;
+              server_name lighthouse;
+              root /var/www/lighthouse;
+              index index.html;
+              location / {
+                  try_files $uri $uri/ =404;
+              }
+          }
+      notify: Restart Nginx
+
+    - name: Ensure Nginx is running
+      ansible.builtin.service:
+        name: nginx
         state: started
-      async: 60
-      poll: 0
+        enabled: true
+
+  handlers:
+    - name: Restart Nginx
+      ansible.builtin.service:
+        name: nginx
+        state: restarted
