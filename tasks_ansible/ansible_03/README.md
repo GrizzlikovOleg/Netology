@@ -1,6 +1,6 @@
 # Ansible Playbook: site.yml
 
-
+https://github.com/GrizzlikovOleg/Netology/tree/08-ansible-03-yandex/tasks_ansible/ansible_03/playbook
 
 ## Описание:
 Данный playbook предназначен для автоматизированного развертывания и базовой настройки серверов и сервисов ClickHouse, Vector и LightHouse на ОС CentOS 7. Playbook обеспечивает установку необходимых пакетов, настройку сервисов и конфигурацию.  
