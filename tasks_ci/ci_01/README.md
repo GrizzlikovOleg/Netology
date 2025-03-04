@@ -1,6 +1,8 @@
-# Ansible 
+#Ci CD
 
-https://github.com/GrizzlikovOleg/lighthouse-role
-https://github.com/GrizzlikovOleg/vector-role
+![bug](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_ci/ci_01/bug.png)
 
-https://github.com/GrizzlikovOleg/ansible-playbook
+
+![other](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_ci/ci_01/other.png)
+
+
