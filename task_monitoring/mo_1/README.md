@@ -1,29 +1,43 @@
-# ANSIBLE_01
+## 1. 
+- **CPU usage** — вычисления → нужно понимать нагрузку.
+- **RAM usage** — может утекать, важно отслеживать.
+- **Disk space + inodes** — сохраняются отчёты, следим за местом и количеством файлов.
+- **Disk I/O** — может стать узким местом.
+- **HTTP response codes** — 2xx/4xx/5xx для оценки доступности.
+**Обоснование**: Метрики покрывают CPU, хранение, производительность и доступность HTTP.
 
-# Основная часть
-# 1
-Facts = 12
+## 2.
+Менеджеру важно понимать: сервис работает или нет, а не глубину inodes.
 
-![ansible](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_ansible/ansible_01/ansiblefacts.png)
-# 2
-Facts = all default fact
+- Выносим **отдельный дашборд для бизнеса**:
+  - % успешных запросов (SLA)
+  - Среднее время ответа
+  - Сколько задач завершились успешно
+  - Кол-во ошибок — в понятных терминах
+- Можно использовать:
+  - **Grafana + простой дашборд**
+  - **Metabase / Redash** — визуализация бизнес-метрик
+  - **StatusPage** — автоматический отчёт о работоспособности
+- Пишем человеческим языком:
+  > "За сутки — 97% успешных отчётов, время отклика 320мс, ошибок: 5 внутренних"
 
-![ansible](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_ansible/ansible_01/ansiblefacts_changed.png)
-# 3
-Использую существующие, развернул их на той же машине.
+## 3.
+### Вариант 1 — просто и бесплатно
+- Приложение пишет ошибки в консоль (в терминал).
+- Эти сообщения можно смотреть через встроенный инструмент на сервере (`journalctl`).
+- Можно настроить простой скрипт, который раз в пару минут читает эти сообщения и ищет там слово “ERROR”.
+- Если нашёл — отправляет уведомление, например, в Telegram или на почту.
+### Вариант 2 — чуть умнее, но всё ещё бесплатно
+- Пишем на Python небольшой скрипт:
+  - Он читает ошибки из логов.
+  - Сохраняет список новых ошибок.
+  - Показывает, когда и что пошло не так.
+  - Может даже отправить отчёт в чат.
+### Вариант 3 — использовать бесплатные инструменты
+- Есть бесплатные варианты лог-систем (например, Loki, или просто лог-файлы с веб-интерфейсом).
+- Можно подключить это позже, когда будет чуть больше времени или ресурсов.
 
-![ansible](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_ansible/ansible_01/ansiblefacts_docker.png)
-# 4
-
-![ansible](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_ansible/ansible_01/ansiblefacts_prod.png)
-# 5-6
-Изменил факты
-
-![ansible](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_ansible/ansible_01/ansiblefacts_changed2.png)
-# 7-8
-
-![ansible](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_ansible/ansible_01/ansiblefacts_encrypt.png)
-![ansible](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_ansible/ansible_01/ansiblefacts_askpass.png)
-# 9-13
-
-![ansible](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_ansible/ansible_01/ansiblefacts_prod_local.png)
+## 4.
+Предполагаю, что в расчёт попадают не только успешные HTTP-ответы, но и запросы, которые вообще не получили ответ — например, таймауты или обрывы соединения.
+Такие случаи не имеют кода ответа, но учитываются в "всего запросов", из-за чего доля 2xx падает.
+Правильнее считать SLA как долю 2xx среди всех **реальных HTTP-ответов**, а ошибки соединения учитывать отдельно.
