@@ -16,13 +16,13 @@ node_load15
 (node_filesystem_free_bytes{device=~"/dev/.*"} / node_filesystem_size_bytes{device=~"/dev/.*"}) * 100
 
 DashBoard
-![DashBoard](https://github.com/GrizzlikovOleg/Netology/blob/main/task_monitoring/mo_2/DashBoard.png)
+![DashBoard](https://github.com/GrizzlikovOleg/Netology/blob/main/task_monitoring/mo_2/Dashboard.png)
 
 # 3.
 Alerts
 ![BOT](https://github.com/GrizzlikovOleg/Netology/blob/main/task_monitoring/mo_2/BOT.png)
 DashBoard
-![DashBoard](https://github.com/GrizzlikovOleg/Netology/blob/main/task_monitoring/mo_2/DashBoard.png)
+![DashBoard](https://github.com/GrizzlikovOleg/Netology/blob/main/task_monitoring/mo_2/Dashboard.png)
 
 # 4.
 
