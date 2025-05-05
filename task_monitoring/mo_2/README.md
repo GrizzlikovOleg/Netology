@@ -19,9 +19,9 @@ DashBoard
 ![DashBoard](https://github.com/GrizzlikovOleg/Netology/blob/main/task_monitoring/mo_2/Dashboard.png)
 
 # 3.
-Alerts
+Alerts  
 ![BOT](https://github.com/GrizzlikovOleg/Netology/blob/main/task_monitoring/mo_2/BOT.png)
-DashBoard
+DashBoard  
 ![DashBoard](https://github.com/GrizzlikovOleg/Netology/blob/main/task_monitoring/mo_2/Dashboard.png)
 
 # 4.
