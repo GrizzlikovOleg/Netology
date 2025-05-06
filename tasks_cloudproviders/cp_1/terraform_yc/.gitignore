@@ -1,0 +1,29 @@
+# Terraform files
+*.tfstate
+*.tfstate.*
+.terraform/
+
+# Local Terraform directories
+*.tfvars
+*.tfvars.json
+.terraform.lock.hcl
+
+# Crash log files
+crash.log
+
+# .env file for storing sensitive data
+.env
+
+# Ignore the private SSH key (for example, for accessing VMs)
+*.pem
+*.key
+
+# Ignore any local variables files (for instance, variables for Terraform)
+*.tfvars
+
+# Ignore Terraform backup files
+*.bak
+
+# Ignore system files
+.DS_Store
+Thumbs.db
