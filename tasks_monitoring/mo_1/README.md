@@ -69,14 +69,14 @@
 ## 7.
 ChronografWEB
 
-![ChronografWEB](https://github.com/GrizzlikovOleg/Netology/blob/main/task_monitoring/mo_1/ChronografWEB.png)
+![ChronografWEB](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_monitoring/mo_1/ChronografWEB.png)
 
 ## 8.
 CPU_USAGE
 
-![ChronografWEB_1](https://github.com/GrizzlikovOleg/Netology/blob/main/task_monitoring/mo_1/ChronografWEB_1.png)
+![ChronografWEB_1](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_monitoring/mo_1/ChronografWEB_1.png)
 
 ## 9.
 Docker Measurment
 
-![ChronografWEB_2](https://github.com/GrizzlikovOleg/Netology/blob/main/task_monitoring/mo_1/ChronografWEB_2.png)
+![ChronografWEB_2](https://github.com/GrizzlikovOleg/Netology/blob/main/tasks_monitoring/mo_1/ChronografWEB_2.png)
